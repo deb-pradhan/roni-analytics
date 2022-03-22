@@ -50,7 +50,7 @@ html, body{
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 30px 10%;
+    padding: 0px 10%;
 }
 
 .logo{

@@ -301,7 +301,7 @@ function Navbar() {
         <header className={styles.header}>
                 
                     
-                    <Image  src="/navbar-logo.svg" className={styles.logo} layout="responsive" alt="Picture of the author" width={200} height={200}></Image>
+                    <Image  src="/navbar-logo.svg" className={styles.logo}  alt="Picture of the author" width={250} height={250}></Image>
                     
                     <nav>
                         <ul className={styles.navlinks}>
