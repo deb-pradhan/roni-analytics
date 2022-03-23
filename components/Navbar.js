@@ -303,7 +303,7 @@ function Navbar() {
       ></canvas>
 
       <header className={styles.header}>
-        <img src="/navbar-logo.svg" className={styles.headerLogo} width="200" height="50" />
+        <img src="/navbar-logo.svg" className={styles.headerLogo} />
         <input type="checkbox" id="navToggle" className={styles.navToggle} />
         <nav className={styles.nav}>
           <ul className={styles.ul}>

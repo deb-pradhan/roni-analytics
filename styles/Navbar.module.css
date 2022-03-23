@@ -27,6 +27,8 @@
 
 .headerLogo{
     margin: 1rem 1rem 1rem 1rem;
+    width: 25vmin;
+    height: auto;
 }
 
 .navToggle{
@@ -102,7 +104,7 @@ list-style: none;
 }
 
 .nav .a:hover{
-    color: rgba(66, 163, 158, 0.836);
+    color: rgb(103, 221, 215);
     font-size: 1.2rem;
 }
 
@@ -139,6 +141,7 @@ list-style: none;
 
     .nav .a{
         opacity: 1;
+        position: relative;
     }
 
     .nav .ul{
@@ -149,5 +152,22 @@ list-style: none;
         margin-left: 3em;
         margin-bottom: 0;
     }
+
+    .nav .a::before{
+        content: '';
+        display: block;
+        height: 5px;
+        background: rgb(103, 221, 215);
+        position: absolute;
+        bottom: -.75em;
+        left: 0;
+        right: 0;
+        transform: scale(0,1);
+        transition: transform ease-in-out 250ms;
+    }
+
+    .nav .a:hover::before{
+        transform: scale(1,1)
+    }    
 }
 
