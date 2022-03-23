@@ -1,20 +1,11 @@
-.links{
-    color:rgb(168, 83, 83);
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-/* *{
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-html, body{
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #333;
-    overflow: hidden;
-} */
 .canvas{
-    background-color:rgb(6, 21, 29);
+    background: rgb(10,68,69);
+    background: -moz-linear-gradient(0deg, rgba(10,68,69) 0%, rgba(32,9,61,) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(10,68,69) 0%, rgba(32,9,61) 100%);
+    background: linear-gradient(0deg, rgba(10,68,69) 0%, rgba(32,9,61) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0a4445",endColorstr="#20093d",GradientType=1);
     position:absolute;
     left:0;
     top:0;
@@ -22,72 +13,141 @@ html, body{
     padding: 0;
     z-index:-1;
 }
-
-
-/* .navbar {
-    position: absolute;
-    right: 0;
-    left: 0;
-    z-index: 1030;
-    background-color:rgb(57, 141, 113);
-    color: aliceblue;
-    display: flex;
-    flex-wrap: ;
-    align-items: center;
-    justify-content: space-around;   
-
-}
-
-.navlinks{
-    
-    color:bisque;
-    
-} */
-
-/*here goes nothiiiiiiiiiiiing*/
+/* Navigation style starts here */
 
 .header{
+    background: rgba(44, 105, 141, 0.562);
+    text-align: center;
+    position:fixed;
+    width: 100%;
+    z-index:100000;
+    left:0;
+    top:0;
+}
+
+.headerLogo{
+    margin: 1rem 1rem 1rem 1rem;
+}
+
+.navToggle{
+    display:none;
+}
+
+.navToggleLabel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 1em;
+    height: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: 0px 10%;
+    align-items: center;
+  }
+  
+  .navToggleLabel span,
+  .navToggleLabel span::before,
+  .navToggleLabel span::after {
+    display: block;
+    background: white;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+  }
+  
+  .navToggleLabel span::before,
+  .navToggleLabel span::after {
+    content: '';
+    position: absolute;
+  }
+  
+  .navToggleLabel span::before {
+    bottom: 7px;
+  }
+  
+  .navToggleLabel span::after {
+    top: 7px;
+  }
+  
+
+.nav{
+    background:rgba(44, 105, 141, 0.562);
+    width:100%;
+    position:absolute;
+    text-align: right;
+    top:100%;
+    left:0;
+    font-family: "Montserrat";
+    transform: scale(1,0);
+    transform-origin: top;
+    transition: transform 300ms ease-in-out;
+
 }
 
-.logo{
-    cursor: pointer;
-    margin:2rem;
+.nav, .ul{
+margin: 0;
+padding: 0;
+list-style: none;
 }
 
-.navlinks{
-    list-style: none;
+.nav, .li{
+    margin-bottom: 1em;
+    margin-right: 1em;
 }
 
-.navlinks li{
-    display: inline-block;
-    padding: 0 20px;
-    color:azure;
-    font-size: 0.9em;
+.nav .a{
+    color: rgb(226, 226, 226);
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
 }
 
-.navlinks li a{
-    transition: all 0.3s ease 0s;
+.nav .a:hover{
+    color: rgba(66, 163, 158, 0.836);
+    font-size: 1.2rem;
 }
 
-.navlinks li a:hover{
-    color:aqua;
+.navToggle:checked ~ .nav{
+    transform: scale(1,1)
 }
 
-.button{
-    margin-left:20px;
-    padding: 15px, 30px;
-    background-color:burlywood;
-    border: none;
-    border-radius: 50px;
-    cursor:pointer;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+.navToggle:checked ~ .nav .a{
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
 }
-.button:hover{
-    
-    background-color:rgb(117, 81, 33);
-    
+
+@media screen and (min-width: 800px) {
+    .navToggleLabel {
+      display: none;
+    }
+
+    .header{
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    }
+
+    .headerLogo{
+        grid-column: 2/3;
+    }
+
+    .nav{
+        all: unset;
+        grid-column: 3/4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .nav .a{
+        opacity: 1;
+    }
+
+    .nav .ul{
+        display: flex;
+    }
+
+    .nav .li{
+        margin-left: 3em;
+        margin-bottom: 0;
+    }
 }
+

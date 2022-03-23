@@ -3,9 +3,13 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "Montserrat", BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: "Montserrat", Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight:500;
+}
+
+:root{
+  --background: rgb(0, 57, 95);
 }
 
 li, a, button {
@@ -16,10 +20,19 @@ li, a, button {
   font-size: 16px;
 }
 
-* {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* 
+dark violet: rgb(19, 18, 36)
+white: rgb(226, 226, 226)
+light blue: rgb(227, 246, 245)
+mid blue: rgb(186, 232, 232)
+deep blue: rgb(44, 105, 141)
+*/
